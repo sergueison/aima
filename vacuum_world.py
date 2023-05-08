@@ -20,12 +20,12 @@ class Environment:
                 self.dirty_b &= False
 
     def performance(self):
-        len = 0
+        time_to_clean = 0
         for x in self.history:
-            if not (x[0] or x[1]) or len == -2:
+            if not (x[0] or x[1]) or time_to_clean == -2:
                 break
-            len -= 1
-        return len
+            time_to_clean -= 1
+        return time_to_clean
 
 
 def simple_reflex_agent(state):
